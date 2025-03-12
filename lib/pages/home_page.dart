@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:wallet_app_ui/utils/my_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,6 +10,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // page controller
+  final _controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,33 +57,45 @@ class _HomePageState extends State<HomePage> {
 
             // cards
             Container(
-                height: 200,
-                child: PageView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    MyCard(
-                      balance: 955.32,
-                      cardNumber: 12345678,
-                      expiryMonth: 11,
-                      expiryYear: 27,
-                      color: Colors.deepPurple[400],
-                    ),
-                    MyCard(
-                      balance: 5250.20,
-                      cardNumber: 12345678,
-                      expiryMonth: 10,
-                      expiryYear: 28,
-                      color: Colors.blue[400],
-                    ),
-                    MyCard(
-                      balance: 343.80,
-                      cardNumber: 12345678,
-                      expiryMonth: 11,
-                      expiryYear: 25,
-                      color: Colors.green[400],
-                    ),
-                  ],
-                )),
+              height: 200,
+              child: PageView(
+                scrollDirection: Axis.horizontal,
+                controller: _controller,
+                children: [
+                  MyCard(
+                    balance: 955.32,
+                    cardNumber: 12345678,
+                    expiryMonth: 11,
+                    expiryYear: 27,
+                    color: Colors.deepPurple[300],
+                  ),
+                  MyCard(
+                    balance: 5250.20,
+                    cardNumber: 12345678,
+                    expiryMonth: 10,
+                    expiryYear: 28,
+                    color: Colors.blue[300],
+                  ),
+                  MyCard(
+                    balance: 343.80,
+                    cardNumber: 12345678,
+                    expiryMonth: 11,
+                    expiryYear: 25,
+                    color: Colors.green[300],
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 25),
+
+            SmoothPageIndicator(
+              controller: _controller,
+              count: 3,
+              effect: ExpandingDotsEffect(
+                activeDotColor: Colors.grey.shade800,
+              ),
+            ),
 
             // 3 buttons -> send + pay + bills
 
