@@ -39,7 +39,7 @@ class MyCard extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              '\$' + balance.toString(),
+              '\$$balance',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 30,
@@ -58,7 +58,7 @@ class MyCard extends StatelessWidget {
                 ),
                 // card expiry date
                 Text(
-                  expiryMonth.toString() + '/' + expiryYear.toString(),
+                  '$expiryMonth/$expiryYear',
                   style: TextStyle(
                     color: Colors.white,
                   ),

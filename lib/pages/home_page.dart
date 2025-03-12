@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 25),
 
             // cards
-            Container(
+            SizedBox(
               height: 200,
               child: PageView(
                 scrollDirection: Axis.horizontal,
@@ -98,6 +98,36 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // 3 buttons -> send + pay + bills
+            Row(
+              children: [
+                // send button
+                Column(
+                  children: [
+                    // icon
+                    Container(
+                      height: 100,
+                      padding: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Image.asset('lib/icons/send-money.png'),
+                      ),
+                    ),
+                    // text
+                    Text(
+                      'Send',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )
 
             // column -> stats + transactions
           ]),
