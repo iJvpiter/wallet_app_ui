@@ -28,6 +28,7 @@ class MyCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
+          // Visa card image
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
