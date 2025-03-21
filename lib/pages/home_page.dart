@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
 
           SizedBox(height: 25),
 
-          // Indicadores de página
+          // Page indicators
           SmoothPageIndicator(
             controller: _controller,
             count: 3,
@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
 
           SizedBox(height: 40),
 
-          // 3 botones -> send + pay + bills
+          // 3 buttons -> send + pay + bills
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Row(
